@@ -1,6 +1,5 @@
-//!Creare un array di oggetti:
-//!Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
-//!Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
+//Creare un array di oggetti:
+//Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 
 let bicicletteDaCorsa = 
 [
@@ -22,17 +21,23 @@ let bicicletteDaCorsa =
     },
 ];
 
+//Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 
-const pesoBiciclette = bicicletteDaCorsa.peso;
-console.log(pesoBiciclette);
+let biciLeggera = bicicletteDaCorsa[0];
+
+for (let i = 0; i < bicicletteDaCorsa.length; i++) {
+    let peso = bicicletteDaCorsa[i];
 
 
-for (let i = 0; i < pesoBiciclette.length; i++) {
-    const pesi = pesoBiciclette[i];
 
-    if ( pesi <= 5){
-        alert('la tu a bici è leggera')
-    }else {
-        alert('la tua bici è pesante')
+    if ( biciLeggera.peso > peso.peso){
+        biciLeggera = peso;
+    
     }
 };
+
+const {nome , peso} = biciLeggera;
+
+console.log(`la bici che pesa di meno è la : ${nome} e pesa: ${peso} kg`);
+
+
